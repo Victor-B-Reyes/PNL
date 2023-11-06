@@ -6,10 +6,15 @@ raw = response.read().decode('utf8')
 tokens = nltk.word_tokenize(raw)
 text = nltk.Text(tokens)
 
-text.concordance("albedrío") #Busqueda de palabras y correlacion de oraciones
-text.similar("realidad") # busqueda cerca de la palabra
-#text.collocations()
-#fdist1 = nltk.FreqDist(text)
-#fdist1.hapaxes()[:50]
-#text.dispersion_plot(["albedrío", "realidad", "libertad"])
+# Busqueda de palabras y correlacion de oraciones
+text.concordance("albedrío")
+
+# busqueda cerca de la palabra
+text.similar("realidad")
+
+text.collocations()
+
+fdist1 = nltk.FreqDist(text)
+fdist1.hapaxes()[:50]
+
 text.generate()
